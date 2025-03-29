@@ -7,10 +7,10 @@ pool:
     - agent.name -equals SAJJAD
 
 stages:
-- stage: Build
+- stage: Build2
   displayName: 'Build Stage'
   jobs:
-  - job: BuildJob
+  - job: BuildJob2
     displayName: 'Build Job'
     steps:
     - script: |
