@@ -7,15 +7,26 @@ pool:
     - agent.name -equals SAJJAD
 
 stages:
-- stage: Build2
+- stage: Build
   displayName: 'Build Stage'
   jobs:
-  - job: BuildJob2
+  - job: BuildJob
     displayName: 'Build Job'
     steps:
     - script: |
         echo "Restoring project dependencies..."
       displayName: 'Restore dependencies'
+    - script: |
+        echo "Running unit tests..."
+      displayName: 'Run unit tests'
+- stage: Test
+  displayName: 'Test Stage'
+  dependsOn: Build
+  isSkippable: false
+  jobs:
+  - job: TestJob
+    displayName: 'Test Job'
+    steps:
     - script: |
         echo "Running unit tests..."
       displayName: 'Run unit tests'
