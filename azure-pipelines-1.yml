@@ -2,7 +2,9 @@ trigger:
 - main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  name: Default
+  demands:
+    - agent.name -equals SAJJAD
 
 stages:
 - stage: Build
@@ -38,7 +40,9 @@ stages:
   - job: DeployStagingJob
     displayName: 'Deploy to Staging Job'
     pool:
-      vmImage: 'ubuntu-latest'
+      name: Default
+      demands:
+      - agent.name -equals SAJJAD
     steps:
     - script: |
         echo "Build staging job..."
