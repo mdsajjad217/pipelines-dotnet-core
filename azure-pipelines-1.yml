@@ -71,7 +71,6 @@ stages:
     steps:
     - script: |
         echo "Deploying to production..."
-        # Add your deployment commands here
       displayName: 'Run deployment commands'
   - job: waitForValidation
     displayName: Wait for external validation
