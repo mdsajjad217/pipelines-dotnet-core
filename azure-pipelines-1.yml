@@ -94,7 +94,6 @@ stages:
     steps:
     - script: |
         echo "Deploying to alternate production..."
-        # Add your deployment commands here
       displayName: 'Run deployment commands'
 
 - stage: Rollback
@@ -106,5 +105,4 @@ stages:
     steps:
     - script: |
         echo "Rolling back the deployment..."
-        # Add your rollback commands here
       displayName: 'Run rollback commands'
